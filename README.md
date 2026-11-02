@@ -23,23 +23,11 @@ second time.
 **This machine is intentionally vulnerable. Run it only on an isolated
 network.**
 
-## Requirements
+## Status
 
-- Docker + Docker Compose
-- A player machine with: `curl`, a browser, CyberChef or a scripting
-  language (for the JWT decode and the XOR puzzle), an SSH client
-
-## Starting the box
-
-```
-./start.sh
-```
-Generates a fresh `.env` with a random per-deployment secret and brings
-all three containers up.
-
-- Portal: http://localhost:8008
-- Waystation and Vault: **not reachable from your host at all** —
-  that's intentional, and part of the challenge.
+This box ships as a VM appliance (OVA) — see the `vm/` directory once it's
+built. There is no Docker build in this repo (an earlier Docker build was
+removed; a Docker version may be added back separately).
 
 ## Flag format
 
@@ -58,3 +46,4 @@ all three containers up.
 - [`docs/hints.md`](docs/hints.md) — progressive hints
 - [`docs/tools.md`](docs/tools.md) — what each tool is for
 - [`docs/writeup/WRITEUP.md`](docs/writeup/WRITEUP.md) — full spoiler walkthrough
+- [`flags/generate_flags.py`](flags/generate_flags.py) — the per-deployment flag derivation scheme, used by `organizer/verify.py`
