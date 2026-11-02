@@ -1,0 +1,7 @@
+.env
+organizer/answer-key.txt
+*.ova
+vm/dist/
+vm/disks/
+vm/images/
+vm/seed/
