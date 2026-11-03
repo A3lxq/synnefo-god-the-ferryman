@@ -1,0 +1,39 @@
+#cloud-config
+# First-boot configuration for the "waystation" host of the God (The
+# Ferryman) capstone CTF box. Native build -- no Docker. ctfbuilder's
+# SSH here is build tooling only (key-based, private key never
+# shipped) -- not part of the challenge. Never reachable except via
+# portal's internal link.
+
+hostname: waystation
+manage_etc_hosts: true
+
+users:
+  - name: ctfbuilder
+    gecos: "CTF build/maintenance account (instructor-only, key-based)"
+    groups: [sudo]
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    shell: /bin/bash
+    lock_passwd: true
+    ssh_authorized_keys:
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKdkeCYqlhw6ffAJVjsY6IiGXJ9uiz0ZJUP6zw63aUZx ctf-instructor-build-key"
+
+chpasswd:
+  expire: false
+
+ssh_pwauth: false
+disable_root: true
+
+package_update: true
+package_upgrade: false
+packages:
+  - python3
+  - python3-venv
+  - python3-pip
+  - openssh-server
+  - openssh-client
+  - sshpass
+  - sudo
+
+runcmd:
+  - [bash, -c, "echo 'cloud-init base config applied' > /var/log/ctf-cloudinit.log"]

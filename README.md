@@ -23,11 +23,19 @@ second time.
 **This machine is intentionally vulnerable. Run it only on an isolated
 network.**
 
-## Status
+## Running it
 
-This box ships as a VM appliance (OVA) — see the `vm/` directory once it's
-built. There is no Docker build in this repo (an earlier Docker build was
-removed; a Docker version may be added back separately).
+This box ships as **three** VM appliances — download all three `.ova`
+files from this repo's [Releases](../../releases) page and import all
+of them into VirtualBox (File > Import Appliance) or VMware
+Workstation/Fusion (File > Open). The three form a chain (Portal <->
+Waystation <-> Vault); each VM's internal-link adapter(s) need to be
+set to the matching Internal Network / LAN segment name — see
+[`vm/README.md`](vm/README.md) for exact steps and for rebuilding
+from source.
+
+There is no Docker build in this repo (an earlier one was removed; a
+Docker version may be added back separately).
 
 ## Flag format
 

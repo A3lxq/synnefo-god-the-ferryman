@@ -1,7 +1,10 @@
 .env
 organizer/answer-key.txt
+organizer/release-secret.txt
 *.ova
-vm/dist/
-vm/disks/
 vm/images/
-vm/seed/
+vm/keys/
+vm/*/disks/
+vm/*/seed/
+vm/*/dist/
+vm/*/logs/
