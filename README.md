@@ -1,5 +1,7 @@
 # Case File 8 (God) — The Ferryman
 
+![banner](banner.jpeg)
+
 Part of **The Halcyon Protocol** CTF series. This is the **capstone** —
 the final case file in the arc that began with Case File 1. It stands
 alone (you don't strictly need any other box in the series to play it),
